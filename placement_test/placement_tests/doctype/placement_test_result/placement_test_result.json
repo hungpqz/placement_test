@@ -1,7 +1,7 @@
 {
  "doctype": "DocType",
  "name": "Placement Test Result",
- "module": "Placement Test",
+ "module": "Placement Tests",
  "custom": 0,
  "istable": 0,
  "fields": [
