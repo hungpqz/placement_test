@@ -1,0 +1,122 @@
+{
+ "doctype": "DocType",
+ "name": "Placement Test Result",
+ "module": "Placement Test",
+ "custom": 1,
+ "istable": 0,
+ "fields": [
+  {
+   "fieldname": "result_id",
+   "label": "Result ID",
+   "fieldtype": "Int",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "quiz_id",
+   "label": "Quiz ID",
+   "fieldtype": "Int"
+  },
+  {
+   "fieldname": "quiz_title",
+   "label": "Quiz Title",
+   "fieldtype": "Data",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "score_percentage",
+   "label": "Score Percentage",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "final_score",
+   "label": "Final Score",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "score_by",
+   "label": "Score By",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "score_type",
+   "label": "Score Type",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "points",
+   "label": "Points",
+   "fieldtype": "Float"
+  },
+  {
+   "fieldname": "duration_seconds",
+   "label": "Duration (Seconds)",
+   "fieldtype": "Int"
+  },
+  {
+   "fieldname": "start_time",
+   "label": "Start Time",
+   "fieldtype": "Datetime"
+  },
+  {
+   "fieldname": "end_time",
+   "label": "End Time",
+   "fieldtype": "Datetime"
+  },
+  {
+   "fieldname": "submitted_at",
+   "label": "Submitted At",
+   "fieldtype": "Datetime"
+  },
+  {
+   "fieldname": "student_name",
+   "label": "Student's Name",
+   "fieldtype": "Data",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "student_id",
+   "label": "Student's ID",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "tester_name",
+   "label": "Tester's Name",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "user_email",
+   "label": "User Email",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "user_phone",
+   "label": "User Phone",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "user_ip",
+   "label": "User IP",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "integration_source",
+   "label": "Integration Source",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "raw_payload",
+   "label": "Raw Payload",
+   "fieldtype": "Code",
+   "options": "JSON"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ]
+}
