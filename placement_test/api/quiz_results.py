@@ -7,12 +7,27 @@ from frappe.utils import get_datetime
 DOC_TYPE = "Placement Test Result"
 
 
+def _unwrap_payload(data: Any) -> Dict[str, Any]:
+    """Return the payload object from the request, defaulting to the body itself."""
+    if not isinstance(data, dict):
+        return {}
+    if "payload" not in data:
+        return data
+    payload = data.get("payload")
+    if isinstance(payload, str):
+        try:
+            payload = json.loads(payload)
+        except (TypeError, ValueError):
+            return {}
+    return payload if isinstance(payload, dict) else {}
+
+
 def _load_payload() -> Dict[str, Any]:
     """Extract the incoming payload regardless of content type."""
     try:
         data = frappe.request.get_json()  # type: ignore[attr-defined]
         if data:
-            return data
+            return _unwrap_payload(data)
     except Exception:
         pass
 
@@ -24,11 +39,11 @@ def _load_payload() -> Dict[str, Any]:
                 sole_value = next(iter(form_dict.values()))
                 if isinstance(sole_value, str):
                     try:
-                        return json.loads(sole_value)
+                        return _unwrap_payload(json.loads(sole_value))
                     except (TypeError, ValueError):
                         return {}
             try:
-                return json.loads(json.dumps(form_dict))
+                return _unwrap_payload(json.loads(json.dumps(form_dict)))
             except (TypeError, ValueError):
                 return {}
     return {}
